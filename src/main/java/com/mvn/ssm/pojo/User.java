@@ -1,7 +1,7 @@
 package com.mvn.ssm.pojo;
 
 public class User {
-    private Long lid;
+    private Long id;
 
     private String username;
 
@@ -9,12 +9,18 @@ public class User {
 
     private String name;
 
-    public Long getLid() {
-        return lid;
+    private Integer x;
+
+    private Integer y;
+
+    private String jsonMemo;
+
+    public Long getId() {
+        return id;
     }
 
-    public void setLid(Long lid) {
-        this.lid = lid;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -39,5 +45,29 @@ public class User {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public Integer getX() {
+        return x;
+    }
+
+    public void setX(Integer x) {
+        this.x = x;
+    }
+
+    public Integer getY() {
+        return y;
+    }
+
+    public void setY(Integer y) {
+        this.y = y;
+    }
+
+    public String getJsonMemo() {
+        return jsonMemo;
+    }
+
+    public void setJsonMemo(String jsonMemo) {
+        this.jsonMemo = jsonMemo == null ? null : jsonMemo.trim();
     }
 }
