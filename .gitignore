@@ -1,0 +1,8 @@
+D:\GitHub\ssm\target
+D:\GitHub\ssm\target\**
+target/classes/com/mvn/ssm/mapping/UserMapper.xml
+target/test-classes/jdbc.properties
+target/test-classes/log4j.properties
+target/test-classes/spring-mybatis.xml
+ssm.iml
+ssm.iml
