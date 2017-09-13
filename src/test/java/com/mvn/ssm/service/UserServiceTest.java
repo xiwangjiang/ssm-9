@@ -27,4 +27,9 @@ public class UserServiceTest {
         User user = userService.getUserById(7L);
         System.out.println(JSON.toJSON(user));
     }
+
+    @Test
+    public void testGitHub(){
+        System.out.println("Hello GitHub!");
+    }
 }
