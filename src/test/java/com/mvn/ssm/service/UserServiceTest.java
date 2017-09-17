@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 用户service测试类
@@ -26,6 +27,18 @@ public class UserServiceTest {
     public void test(){
         User user = userService.getUserById(7L);
         System.out.println(JSON.toJSON(user));
+    }
+
+    @Test
+    public void testSelectByPosition(){
+        User user = userService.selectByPosition(300,40);
+        System.out.println(JSON.toJSON(user));
+    }
+
+    @Test
+    public void testSelectAll(){
+        List<User> userList = userService.getAll();
+        System.out.println(JSON.toJSON(userList));
     }
 
     @Test

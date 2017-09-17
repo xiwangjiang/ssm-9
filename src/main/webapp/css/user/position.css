@@ -1,0 +1,33 @@
+body{
+    background-image: url("/image/border-half.png");
+    background-repeat: repeat;
+    width: 2400px;
+    height: 2160px;
+}
+.toolbar{
+    position: fixed;
+    top: 20px;
+    left: 60px;
+    height: 40px;
+}
+.divCard{
+    cursor:move;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    border: 1px dotted red;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    box-shadow: 8px 4px 16px 0px rgba(0,0,0,0.2);
+    position: absolute;
+    width: 78px;
+    height: 18px;
+}
+.divDrag{
+    background-image: url('/image/hand.png');
+    background-size: cover;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 15px;
+    height: 20px;
+}

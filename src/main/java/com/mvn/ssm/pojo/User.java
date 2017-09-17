@@ -13,7 +13,7 @@ public class User {
 
     private Integer y;
 
-    private String jsonMemo;
+    private String jsonmemo;
 
     public Long getId() {
         return id;
@@ -63,11 +63,11 @@ public class User {
         this.y = y;
     }
 
-    public String getJsonMemo() {
-        return jsonMemo;
+    public String getJsonmemo() {
+        return jsonmemo;
     }
 
-    public void setJsonMemo(String jsonMemo) {
-        this.jsonMemo = jsonMemo == null ? null : jsonMemo.trim();
+    public void setJsonmemo(String jsonmemo) {
+        this.jsonmemo = jsonmemo == null ? null : jsonmemo.trim();
     }
 }

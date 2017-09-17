@@ -2,35 +2,62 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mvn.ssm.dao.UserMapper">
   <resultMap id="BaseResultMap" type="com.mvn.ssm.pojo.User">
-    <id column="lId" jdbcType="BIGINT" property="lid" />
+    <id column="id" jdbcType="BIGINT" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="x" jdbcType="INTEGER" property="x" />
+    <result column="y" jdbcType="INTEGER" property="y" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.mvn.ssm.pojo.User">
+    <result column="jsonMemo" jdbcType="LONGVARCHAR" property="jsonmemo" />
   </resultMap>
   <sql id="Base_Column_List">
-    lId, username, password, name
+    id, username, password, name, x, y
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
+  <sql id="Blob_Column_List">
+    jsonMemo
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select
     <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
     from tbUser
-    where lId = #{lid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByPosition" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tbUser
+    where x = #{x,jdbcType=INTEGER} and y = #{y,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tbUser
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from tbUser
-    where lId = #{lid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.mvn.ssm.pojo.User">
-    insert into tbUser (lId, username, password, 
-      name)
-    values (#{lid,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{name,jdbcType=VARCHAR})
+    insert into tbUser (id, username, password,
+    name, x, y, jsonMemo
+    )
+    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+    #{name,jdbcType=VARCHAR}, #{x,jdbcType=INTEGER}, #{y,jdbcType=INTEGER}, #{jsonmemo,jdbcType=LONGVARCHAR}
+    )
   </insert>
   <insert id="insertSelective" parameterType="com.mvn.ssm.pojo.User">
     insert into tbUser
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="lid != null">
-        lId,
+      <if test="id != null">
+        id,
       </if>
       <if test="username != null">
         username,
@@ -41,10 +68,19 @@
       <if test="name != null">
         name,
       </if>
+      <if test="x != null">
+        x,
+      </if>
+      <if test="y != null">
+        y,
+      </if>
+      <if test="jsonmemo != null">
+        jsonMemo,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="lid != null">
-        #{lid,jdbcType=BIGINT},
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="username != null">
         #{username,jdbcType=VARCHAR},
@@ -54,6 +90,15 @@
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="x != null">
+        #{x,jdbcType=INTEGER},
+      </if>
+      <if test="y != null">
+        #{y,jdbcType=INTEGER},
+      </if>
+      <if test="jsonmemo != null">
+        #{jsonmemo,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -69,14 +114,35 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
+      <if test="x != null">
+        x = #{x,jdbcType=INTEGER},
+      </if>
+      <if test="y != null">
+        y = #{y,jdbcType=INTEGER},
+      </if>
+      <if test="jsonmemo != null">
+        jsonMemo = #{jsonmemo,jdbcType=LONGVARCHAR},
+      </if>
     </set>
-    where lId = #{lid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.mvn.ssm.pojo.User">
+    update tbUser
+    set username = #{username,jdbcType=VARCHAR},
+    password = #{password,jdbcType=VARCHAR},
+    name = #{name,jdbcType=VARCHAR},
+    x = #{x,jdbcType=INTEGER},
+    y = #{y,jdbcType=INTEGER},
+    jsonMemo = #{jsonmemo,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.mvn.ssm.pojo.User">
     update tbUser
     set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR}
-    where lId = #{lid,jdbcType=BIGINT}
+    password = #{password,jdbcType=VARCHAR},
+    name = #{name,jdbcType=VARCHAR},
+    x = #{x,jdbcType=INTEGER},
+    y = #{y,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
