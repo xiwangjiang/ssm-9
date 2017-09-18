@@ -22,6 +22,18 @@ body{
     width: 78px;
     height: 18px;
 }
+.curDivCard{
+    cursor:move;
+    margin: 4px 4px 4px 4px;
+    padding: 5px 5px 5px 5px;
+    border: 2px dotted red;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    box-shadow: 8px 4px 16px 0px rgba(0,0,0,0.2);
+    position: absolute;
+    width: 78px;
+    height: 18px;
+}
 .divDrag{
     background-image: url('/image/hand.png');
     background-size: cover;

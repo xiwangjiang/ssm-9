@@ -48,12 +48,12 @@ public class UserController {
     @RequestMapping("add")
     public @ResponseBody String add(String name,Integer x, Integer y, Model model) {
         User user = new User();
-        user.setUsername("");
-        user.setPassword("");
+        user.setUsername("guest");
+        user.setPassword("123");
         user.setName(name);
         user.setX(x);
         user.setY(y);
-        user.setJsonmemo("{}");
+        user.setJsonmemo("{desc:'预留待开发'}");
         int result = userService.save(user);
         if(1 == result){
             return "success";
