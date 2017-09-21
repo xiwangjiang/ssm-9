@@ -1,8 +1,8 @@
 body{
     background-image: url("/image/border-half.png");
     background-repeat: repeat;
-    width: 2400px;
-    height: 2160px;
+    width: 2300px;
+    height: 4700px;
 }
 .toolbar{
     position: fixed;
@@ -42,4 +42,26 @@ body{
     top: 5px;
     width: 15px;
     height: 20px;
+}
+.borderLine{
+    position: relative;
+    border: 1px solid;
+    transform-origin-x: left;
+    -ms-transform-origin-x: left;
+    -webkit-transform-origin-x: left;
+}
+
+.lineContent {
+    height: 20px;  //div的高度
+    width: 50px;   //div的宽度
+
+position: relative; //div相对定位（重点！）
+left: 50%;  //将div相对于自己与左边(left)移动50%的距离（重点！）
+top: -30px;  //将div相对于自己向上(top)移动-30px的距离<调整你自己的参数>（重点！）
+
+font: normal 1.2em/20px 微软雅黑; //字体（并不是必须，可不添加）
+vertical-align: middle; //垂直居中（并不是必须，可不添加）
+text-align: center; //水平居中（并不是必须，可不添加）
+border-radius: 4px; //div呈现圆角效果（并不是必须，可不添加）
+background-color: chartreuse; //div的背景色（并不是必须，可不添加）
 }

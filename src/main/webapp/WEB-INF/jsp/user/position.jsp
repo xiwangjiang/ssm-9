@@ -7,6 +7,7 @@
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/user/position.css"></link>
     <script src="/js/jquery-1.9.1.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
     <script src="/js/bootstrap-modal.js"></script>
     <script src="/js/user/position.js"></script>
     <title>工位表</title>

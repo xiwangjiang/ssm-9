@@ -3,6 +3,8 @@ var positionJs = {
         doDragging(getDraggingDialog).enable();
         $("#addPosition").on("click",newPosition);
         doubleShift();
+        initPagePosition();
+        drawRegion();
     }
 };
 
@@ -344,3 +346,60 @@ function doubleShift(){
     });
 }
 
+var lineArr = [
+    // [left,top,width,rotate,color]
+    // 外环
+    [100,800,1500,-30,'red'],
+    [1400,30,2000,40,'red'],
+    [2933,1295,1900,90,'red'],
+    [100,4810,3270,-30,'red'],
+    [100,720,4070,90,'red'],
+
+    // 内环
+    [900,1800,690,-30,'red'],
+    [1500,1433,650,40,'blue'],
+    [2000,1832,650,90,'green'],
+    [900,3100,1270,-30,'yello'],
+    [900,1720,1360,90,'black']
+];
+
+function drawRegion(){
+    $.each(lineArr,function(index){
+        drawLine(lineArr[index]);
+    });
+}
+
+/**
+ * 画线
+ * @param line 线的属性
+ */
+function drawLine(line){
+    var lineHtml = '<hr class="borderLine" style="left: '+ line[0]
+        +'px; top:' + line[1]
+        +'px; width: ' + line[2]
+        +'px; transform: rotate(' + line[3]
+        +'deg); -ms-transform: rotate(' + line[3]
+        +'deg); -webkit-transform: rotate(' + line[3]
+        +'deg); color: ' + line[4]
+        +'; "/>';
+    $("body").append(lineHtml);
+}
+
+// 页面打开的时候，自动定位上次浏览的位置
+function initPagePosition(){
+    var pageX = $.cookie('pageX');
+    var pageY = $.cookie('pageY');
+    if(!pageX){
+        pageX = document.documentElement.scrollWidth / 2;
+    }
+    if(!pageY){
+        pageY = document.documentElement.scrollHeight / 2;
+    }
+    document.body.scrollLeft = pageX;
+    document.body.scrollTop = pageY;
+}
+$(window).unload(function(){
+    //页面关闭的时候，页面当前显示的位置
+    $.cookie('pageX', document.body.scrollLeft, { expires: 365 ,path: '/' ,domain:""});
+    $.cookie('pageY', document.body.scrollTop, { expires: 365 ,path: '/' ,domain:""});
+});
