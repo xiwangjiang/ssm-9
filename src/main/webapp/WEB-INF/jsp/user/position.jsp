@@ -22,6 +22,7 @@
     <div class="toolbar">
         <button id="addPosition">很丑的添加按钮</button>
     </div>
+    <img class="timgImg" src="/image/timg.png"/>
     <c:forEach items="${userList}" var="user" varStatus="status">
         <div x="<c:out value="${user.x}"/>" y="<c:out value="${user.y}"/>"
              class="divCard" style="left:<c:out value="${user.x}"/>px; top:<c:out value="${user.y}"/>px;">
