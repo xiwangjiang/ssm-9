@@ -1,5 +1,5 @@
 body{
-    background-image: url("/image/border-half.png");
+    background-image: url("../../image/border-half.png");
     background-repeat: repeat;
     width: 2300px;
     height: 4700px;
@@ -42,7 +42,7 @@ body{
     height: 18px;
 }
 .divDrag{
-    background-image: url('/image/hand.png');
+    background-image: url('../../image/hand.png');
     background-size: cover;
     position: absolute;
     right: 5px;

@@ -4,12 +4,12 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/user/position.css"></link>
-    <script src="/js/jquery-1.9.1.js"></script>
-    <script src="/js/jquery.cookie.js"></script>
-    <script src="/js/bootstrap-modal.js"></script>
-    <script src="/js/user/position.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/user/position.css"></link>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap-modal.js"></script>
+    <script src="${pageContext.request.contextPath}/js/user/position.js"></script>
     <title>工位表</title>
     <script>
         $(function(){
@@ -22,7 +22,7 @@
     <div class="toolbar">
         <button id="addPosition">很丑的添加按钮</button>
     </div>
-    <img class="timgImg" src="/image/timg.png"/>
+    <img class="timgImg" src="${pageContext.request.contextPath}/image/timg.png"/>
     <c:forEach items="${userList}" var="user" varStatus="status">
         <div x="<c:out value="${user.x}"/>" y="<c:out value="${user.y}"/>"
              class="divCard" style="left:<c:out value="${user.x}"/>px; top:<c:out value="${user.y}"/>px;">
