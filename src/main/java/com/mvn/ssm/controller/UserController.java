@@ -57,7 +57,7 @@ public class UserController {
         if(1 == result){
             return "success";
         }else{
-            System.err.println("添加失败了！");
+            System.err.println("添加失败了aaa！");
             return "fail";
         }
     }
