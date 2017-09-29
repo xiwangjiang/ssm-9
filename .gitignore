@@ -6,3 +6,4 @@ target/test-classes/log4j.properties
 target/test-classes/spring-mybatis.xml
 ssm.iml
 ssm.iml
+/target/
