@@ -57,11 +57,6 @@ public class UserController {
         if(1 == result){
             return "success";
         }else{
-<<<<<<< HEAD
-            System.err.println("添加失败了bbb！");
-=======
-            System.err.println("添加失败了aaa！");
->>>>>>> refs/remotes/origin/master
             return "fail";
         }
     }
