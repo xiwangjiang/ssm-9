@@ -38,7 +38,6 @@ public class UserController {
 
     /**
      * 添加位置
-     * @Test 测试一下eclipse git更新代码
      * @param name
      * @param x
      * @param y
@@ -58,6 +57,7 @@ public class UserController {
         if(1 == result){
             return "success";
         }else{
+            System.err.println("添加失败了！");
             return "fail";
         }
     }
