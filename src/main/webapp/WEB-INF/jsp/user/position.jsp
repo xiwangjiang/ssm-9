@@ -21,6 +21,15 @@
 <body>
     <div class="toolbar">
         <button id="addPosition">很丑的添加按钮</button>
+        <div>
+            <br/>
+            <h3>使用说明</h3>
+            <h6>1、添加一个新工位，拖动到相应位置！</h6>
+            <h5>2、双击Shift键，输入要搜索的姓名！</h5>
+            <h5>3、按Esc键，取消搜索！</h5>
+            <h5>4、按Ctrl+鼠标滚轮放大缩小地图！</h5>
+            <h6>5、请联系wangshaopeng@dafy.com贡献代码！</h6>
+        </div>
     </div>
     <img class="timgImg" src="${pageContext.request.contextPath}/image/timg.png"/>
     <c:forEach items="${userList}" var="user" varStatus="status">
