@@ -16,10 +16,10 @@ Date: 2017-09-22 11:16:52
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for tbUser
+-- Table structure for tbEmployee
 -- ----------------------------
-DROP TABLE IF EXISTS `tbUser`;
-CREATE TABLE `tbUser` (
+DROP TABLE IF EXISTS `tbEmployee`;
+CREATE TABLE `tbEmployee` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL COMMENT '登录账号',
   `password` varchar(255) NOT NULL COMMENT '密码',
@@ -31,18 +31,18 @@ CREATE TABLE `tbUser` (
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of tbUser
+-- Records of tbEmployee
 -- ----------------------------
-INSERT INTO `tbUser` VALUES ('1', 'guest', '123', '门口', '1800', '1400', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('2', 'guest', '123', '货梯口', '1800', '1960', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('3', 'guest', '123', '洗手间', '1000', '1960', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('4', 'guest', '123', '王少鹏', '2000', '1400', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('5', 'guest', '123', '郝超', '2100', '1400', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('6', 'guest', '123', '老哥', '2200', '1400', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('7', 'guest', '123', '宋昕雨', '2300', '1400', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('8', 'guest', '123', '隗佳欣', '2500', '1480', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('9', 'guest', '123', '王娟', '2600', '1480', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('10', 'guest', '123', '机房', '2400', '1240', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('11', 'guest', '123', '11会议室', '2400', '1360', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('12', 'guest', '123', '胡强胜', '2000', '1200', '{desc:\'预留待开发\'}');
-INSERT INTO `tbUser` VALUES ('13', 'guest', '123', '魏少龙', '2000', '1120', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('1', 'guest', '123', '门口', '1800', '1400', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('2', 'guest', '123', '货梯口', '1800', '1960', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('3', 'guest', '123', '洗手间', '1000', '1960', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('4', 'guest', '123', '王少鹏', '2000', '1400', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('5', 'guest', '123', '郝超', '2100', '1400', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('6', 'guest', '123', '老哥', '2200', '1400', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('7', 'guest', '123', '宋昕雨', '2300', '1400', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('8', 'guest', '123', '隗佳欣', '2500', '1480', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('9', 'guest', '123', '王娟', '2600', '1480', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('10', 'guest', '123', '机房', '2400', '1240', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('11', 'guest', '123', '11会议室', '2400', '1360', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('12', 'guest', '123', '胡强胜', '2000', '1200', '{desc:\'预留待开发\'}');
+INSERT INTO `tbEmployee` VALUES ('13', 'guest', '123', '魏少龙', '2000', '1120', '{desc:\'预留待开发\'}');

@@ -23,7 +23,7 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from tbUser
+    from tbEmployee
     where id = #{id,jdbcType=BIGINT}
   </select>
   <select id="selectByPosition" resultMap="ResultMapWithBLOBs">
@@ -31,7 +31,7 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from tbUser
+    from tbEmployee
     where x = #{x,jdbcType=INTEGER} and y = #{y,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="ResultMapWithBLOBs">
@@ -39,14 +39,14 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from tbUser
+    from tbEmployee
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from tbUser
+    delete from tbEmployee
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.mvn.ssm.pojo.User">
-    insert into tbUser (id, username, password,
+    insert into tbEmployee (id, username, password,
     name, x, y, jsonMemo
     )
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
@@ -54,7 +54,7 @@
     )
   </insert>
   <insert id="insertSelective" parameterType="com.mvn.ssm.pojo.User">
-    insert into tbUser
+    insert into tbEmployee
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -103,7 +103,7 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.mvn.ssm.pojo.User">
-    update tbUser
+    update tbEmployee
     <set>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
@@ -127,7 +127,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.mvn.ssm.pojo.User">
-    update tbUser
+    update tbEmployee
     set username = #{username,jdbcType=VARCHAR},
     password = #{password,jdbcType=VARCHAR},
     name = #{name,jdbcType=VARCHAR},
@@ -137,7 +137,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.mvn.ssm.pojo.User">
-    update tbUser
+    update tbEmployee
     set username = #{username,jdbcType=VARCHAR},
     password = #{password,jdbcType=VARCHAR},
     name = #{name,jdbcType=VARCHAR},
